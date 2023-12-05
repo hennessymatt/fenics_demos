@@ -99,7 +99,7 @@ Define the weak form
 dudt = (u - u_old) / delta_t
 
 # Define the weak form of the diffusion equation
-Fun = dudt * v * dx + u.dx(0) * v.dx(0) * dx
+Fun = dudt * v * dx + D * u.dx(0) * v.dx(0) * dx
 
 # Compute the Jacobian of the weak form (needed for the solver)
 Jac = derivative(Fun, u)
